@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nur Humaira Nisa - Biodata</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+    /* Global Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Decorative floating circles */
+    body::before, body::after {
+        content: "";
+        position: fixed;
+        border-radius: 50%;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+        animation: float 15s ease-in-out infinite;
+    }
+
+    body::before {
+        width: 250px;
+        height: 250px;
+        background: #ff9a9e;
+        top: 10%;
+        left: -100px;
+        animation-delay: 0s;
+    }
+
+    body::after {
+        width: 400px;
+        height: 400px;
+        background: #fad0c4;
+        bottom: 0;
+        right: -150px;
+        animation-delay: 7.5s;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+        }
+        50% {
+            transform: translateY(-20px) translateX(20px);
+        }
+    }
+
+    header {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        animation: slideIn 2s ease-in-out;
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateY(-50px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid white;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .profile-pic:hover {
+        transform: scale(1.1);
+    }
+
+    header h1 {
+        font-family: 'Pacifico', cursive;
+        margin: 0;
+        font-size: 48px;
+    }
+
+    header p {
+        margin: 10px 0 0;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .main-content {
+        flex: 3;
+        min-width: 300px;
+    }
+
+    .contact-sidebar {
+        flex: 1;
+        min-width: 200px;
+        border-left: 3px solid #ff9a9e;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    section {
+        padding: 20px;
+        margin: 20px auto 20px auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+        max-width: 600px;
+        color: #333;
+    }
+
+    section:hover {
+        transform: scale(1.03);
+    }
+
+    h2 {
+        color: #ff6f61;
+        border-bottom: 2px solid #ff9a9e;
+        padding-bottom: 5px;
+        font-size: 28px;
+        text-align: center;
+        transition: color 0.5s ease;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        background-color: #ffe0f0;
+        margin: 10px 0;
+        padding: 12px;
+        border-radius: 10px;
+        font-weight: 400;
+        transition: background-color 0.3s, color 0.5s ease;
+        cursor: default;
+        color: #333;
+    }
+
+    ul li:hover {
+        background-color: #ffc2d1;
+    }
+
+    .contact p,
+    .education p {
+        margin: 10px 0;
+        font-size: 16px;
+        text-align: center;
+        color: #333;
+        transition: color 0.5s ease;
+    }
+
+    /* Gallery Styles */
+    .gallery-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .highlight-figure {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .highlight-figure:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .highlight-figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .highlight-figure:hover img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .overlay figcaption {
+        font-size: 18px;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        max-height: 100%;
+        overflow-y: auto;
+    }
+
+    .highlight-figure:hover .overlay {
+        opacity: 1;
+    }
+
+    footer {
+        background-color: #ff6f61;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        border-top: 5px solid #ff9a9e;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Hover Effects for Buttons */
+    .button {
+        background-color: #ff6f61;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .button:hover {
+        background-color: #e64a3c;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+        background-color: #333;
+        color: #eee;
+    }
+
+    .dark-mode header {
+        background: linear-gradient(135deg, #5d3e4a, #f39c12);
+        color: #eee;
+    }
+
+    .dark-mode .profile-pic {
+        border-color: #eee;
+    }
+
+    .dark-mode footer {
+        background-color: #f39c12;
+        color: #222;
+    }
+
+    /* Updated colors for all text elements to ensure readability in dark mode */
+
+    .dark-mode section {
+        background-color: #444;
+        color: #eee;
+    }
+    .dark-mode h2 {
+        color: #ffa58a;
+        border-color: #ffa58a;
+    }
+    .dark-mode ul li {
+        background-color: #555;
+        color: #eee;
+    }
+    .dark-mode ul li:hover {
+        background-color: #76605e;
+    }
+    .dark-mode .contact p,
+    .dark-mode .education p {
+        color: #eee;
+    }
+    .dark-mode .highlight-figure {
+        box-shadow: 0 4px 15px rgba(255, 111, 97, 0.75);
+    }
+    .dark-mode .highlight-figure:hover {
+        box-shadow: 0 8px 24px rgba(255, 111, 97, 0.9);
+    }
+    .dark-mode .gallery-images img {
+        filter: brightness(0.7);
+    }
+    .dark-mode .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .dark-mode .hometown-section,
+    .dark-mode .work-experience-section {
+        background: #555;
+        color: #eee;
+    }
+    .dark-mode .hometown-icon,
+    .dark-mode .work-icon,
+    .dark-mode .hometown-section h3,
+    .dark-mode .work-experience-section h3,
+    .dark-mode .hometown-section .location,
+    .dark-mode .work-experience-section .role {
+        color: #ffa58a;
+    }
+    .dark-mode .quotes-section blockquote {
+        background-color: #6b2e32;
+        color: #ffc8c8;
+        border-left-color: #ffa58a;
+    }
+    .dark-mode .quotes-section blockquote::before {
+        color: #ffa58a;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .content-wrapper {
+            flex-direction: column;
+        }
+        .contact-sidebar {
+            border-left: none;
+            border-top: 3px solid #ff9a9e;
+            padding-left: 0;
+            padding-top: 20px;
+            order: 2;
+        }
+        .main-content {
+            order: 1;
+        }
+        .contact-extra-sections {
+            max-width: 600px;
+            margin: 20px auto 40px auto;
+        }
+    }
+
+    /* NEW STYLES for the Switch button - fun & beautiful */
+
+    .toggle-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #ff6f61, #ff9a9e);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(255, 111, 97, 0.6);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+        z-index: 1000;
+        user-select: none;
+    }
+    .toggle-button:hover {
+        background: linear-gradient(135deg, #ff9a9e, #ff6f61);
+        box-shadow: 0 6px 20px rgba(255, 111, 97, 0.9);
+        transform: scale(1.1);
+    }
+    .toggle-button:active {
+        transform: scale(0.95);
+        box-shadow: 0 3px 12px rgba(255, 111, 97, 0.7);
+    }
+
+    /* Icon animations */
+    .toggle-button .icon {
+        font-size: 22px;
+        animation: swing 2s infinite ease-in-out;
+        display: inline-block;
+    }
+    .toggle-button.dark .icon-moon {
+        animation: spinMoon 3s linear infinite;
+    }
+    .toggle-button.dark .icon-sun {
+        display: none;
+    }
+    .toggle-button.light .icon-sun {
+        animation: spinSun 3s linear infinite;
+    }
+    .toggle-button.light .icon-moon {
+        display: none;
+    }
+
+    @keyframes swing {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(15deg); }
+    }
+    @keyframes spinMoon {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg);}
+    }
+    @keyframes spinSun {
+        0% { transform: rotate(360deg);}
+        100% { transform: rotate(0deg); }
+    }
+    </style>
+</head>
+<body>
+    <button class="toggle-button light" id="modeToggle" aria-label="Toggle light and dark mode" title="Toggle Light/Dark Mode">
+        <i class="fas fa-sun icon icon-sun" aria-hidden="true"></i>
+        <i class="fas fa-moon icon icon-moon" aria-hidden="true"></i>
+        <span id="toggleText">Switch to Dark Mode</span>
+    </button>
+
+    <header>
+        <img src="profile.jpg" alt="Nur Humaira Nisa" class="profile-pic" />
+        <h1>Nur Humaira Nisa binti Abdul Halim</h1>
+        <p>I'm 21 years old and love cafe hunting. I also like working as a part-timer to earn some pocket money.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="main-content">
+            <section class="bio">
+                <h2>About Me</h2>
+                <p>I am an introverted person who enjoys solitude and reflection. I often find peace and clarity when walking alone, surrounded by nature. I value deep connections, thoughtful conversations, and personal growth.</p>
+            </section>
+
+            <section class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>I'm a multi-tasking person</li>
+                    <li>Love to cook and learn dishes from other cultures</li>
+                    <li>I can speak more than 3 languages</li>
+                    <li>I love to clean my entire house because I have OCD tendencies</li>
+                </ul>
+            </section>
+
+            <section class="education">
+                <h2>Education</h2>
+                <p>Primary School: Sekolah Rendah Marian Convent, Ipoh</p>
+                <p>Year of Graduation (Primary School): 2012</p>
+                <p>Secondary School: Sekolah Menengah Convent, Ipoh</p>
+                <p>Year of Graduation (Secondary School): 2016</p>
+                <p>Pre-diploma: UiTM Seri Iskandar, Perak</p>
+                <p>Year of Graduation (Pre-diploma): 2023</p>
+                <p>Diploma: UiTM Merbok, Kedah</p>
+                <p>Current: 2023–2026</p>
+            </section>
+
+            <section class="hometown-section">
+                <i class="fas fa-map-marker-alt hometown-icon"></i>
+                <h3>Hometown: Ipoh</h3>
+                <p class="location">Ipoh, Perak, Malaysia</p>
+                <p class="description">Known for its beautiful limestone hills, Ipoh is where I spent my childhood. The city is rich in culture and history, offering both modern amenities and traditional charms. I love the food here, especially the famous Ipoh white coffee!</p>
+            </section>
+            <section class="hometown-section">
+                <i class="fas fa-map-marker-alt hometown-icon"></i>
+                <h3>Hometown: Ipoh</h3>
+                <p class="location">Ipoh, Perak, Malaysia</p>
+                <p class="description">Ipoh is my birthplace, a beautiful city nestled in the heart of Perak, Malaysia. It's surrounded by lush limestone hills and tranquil rivers, making it a perfect place for nature lovers. The city offers a peaceful atmosphere while also being rich in cultural heritage, with charming old streets and historical sites to explore. I cherish my time here as it’s the place where I grew up, and it holds countless memories.</p>
+                <p class="description">Ipoh is also famous for its vibrant food scene, particularly its unique blend of Chinese and Malay cuisines. The food here is an integral part of the city’s charm, with traditional dishes passed down through generations. From street food to fine dining, there’s something for every palate.</p>
+                <h4>Best Restaurant Recommendation: Nifayyi Warung &amp; Kafe</h4>
+                <p class="description">If you're ever in Ipoh, I highly recommend visiting Nifayyi Warung &amp; Kafe, one of the most famous restaurants in the city. Known for its signature Salted Egg Chicken Dish, it’s a must-try dish that captures the essence of local flavors. The restaurant is always bustling with locals and tourists alike, and their tender chicken paired with butter rice is simply unbeatable. Don’t forget to try the Chicken Chop as well, which are crispy and delicious!</p>
+            </section>
+
+            <section class="work-experience-section">
+                <i class="fas fa-briefcase work-icon"></i>
+                <h3>Work Experience</h3>
+                <p class="role">Pizza Hut - Service Crew / Cashier</p>
+                <p class="description">May 2022 - June 2022</p>
+
+                <p class="role">Baskbear Coffee - Cashier / Barista</p>
+                <p class="description">July 2022 - October 2022</p>
+
+                <p class="role">YFS Concept Store - Promoter</p>
+                <p class="description">February 2023 - March 2023</p>
+
+                <p class="role">Maejestica Hijab - Sales Advisor / Cashier</p>
+                <p class="description">March 2023 - April 2023</p>
+
+                <p class="role">TGV Cinemas - Service Crew</p>
+                <p class="description">June 2023 - October 2023</p>
+
+                <p class="role">TGV Cinemas - Event Crew (Checkpoint)</p>
+                <p class="description">June 2023</p>
+
+                <p class="role">TGV Cinemas - Service Crew (Mid-semester break)</p>
+                <p class="description">January 2024 - February 2024</p>
+
+                <p class="role">TGV Cinemas - Service Crew (Mid-semester break)</p>
+                <p class="description">July 2024 - September 2024</p>
+            </section>
+
+            <section class="gallery">
+                <h2>Highlights of My Life</h2>
+                <div class="gallery-images">
+                    <figure class="highlight-figure">
+                        <img src="images/highlight1.jpg" alt="Family Picture" />
+                        <div class="overlay">
+                            <figcaption>Parents – My backbone, the ones who sacrifice to give me and my siblings the best in our life. Love you Ayah &amp; Mama.</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="highlight-figure">
+                        <img src="images/highlight2.jpg" alt="Siblings Picture" />
+                        <div class="overlay">
+                            <figcaption>Siblings – We used to fight against each other, but we never left anyone behind.</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="highlight-figure">
+                        <img src="images/highlight3.jpg" alt="Best Friends Picture" />
+                        <div class="overlay">
+                            <figcaption>Special My Best Friend – Cherishing every moment with my loved one and the best trio I've ever had! Aisyah &amp; Rabia'atul.</figcaption>
+                        </div>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+        <div class="contact-sidebar">
+            <section class="contact">
+                <h2>Contact me</h2>
+                <p>Email: nurhumairanisa@gmail.com</p>
+                <p>Phone: 016-1234567</p>
+            </section>
+
+            <div class="contact-extra-sections">
+                <section class="quotes-section">
+                    <h2>Favorite Quotes</h2>
+                    <blockquote>
+                        "Life isn’t about waiting for the storm to pass, it's about learning to dance in the rain." – Vivian Greene
+                    </blockquote>
+                    <blockquote>
+                        "The only way to do great work is to love what you do." – Steve Jobs
+                    </blockquote>
+                    <blockquote>
+                        "Be yourself; everyone else is already taken." – Oscar Wilde
+                    </blockquote>
+                </section>
+
+                <section class="fun-facts">
+                    <h2>Fun Facts About Me</h2>
+                    <ul>
+                        <li>I loves eating in large quantites but i my body weight maintain!</li>
+                        <li>My favorite comfort food when I'm studying is a bowl of fruits.</li>
+                        <li>I can solve a Rubik’s cube in under 2 minutes.</li>
+                        <li>I'm a morning person who loves to watch the sunrise with a cup of tea.</li>
+                        <li>I have a collection of over 100 mugs from cafes I’ve visited during my hunting adventures.</li>
+                    </ul>
+                </section>
+
+                <section class="social-media-section">
+                    <h2>Find Me Online</h2>
+                    <div class="social-links" aria-label="Social media links">
+                        <a href="https://www.facebook.com/nurhumairanisa" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.instagram.com/nurhumairanisa" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/nurhumairanisa" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.linkedin.com/in/nurhumairanisa" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/nurhumairanisa" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github-square"></i></a>
+                    </div>
+                    <p style="text-align:center; margin-top: 10px; font-size: 14px; color:#999;">Let's connect and share ideas!</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Maira. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('modeToggle');
+        const toggleText = document.getElementById('toggleText');
+        const body = document.body;
+
+        function setMode(isDark) {
+            if(isDark) {
+                body.classList.add('dark-mode');
+                toggleBtn.classList.remove('light');
+                toggleBtn.classList.add('dark');
+                toggleText.textContent = "Switch to Light Mode";
+            } else {
+                body.classList.remove('dark-mode');
+                toggleBtn.classList.remove('dark');
+                toggleBtn.classList.add('light');
+                toggleText.textContent = "Switch to Dark Mode";
+            }
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const isDark = body.classList.toggle('dark-mode');
+            setMode(isDark);
+        });
+
+        // Initialize button state on load
+        window.onload = () => {
+            setMode(false);
+        };
+    </script>
+</body>
+</html>
+</content>
+</create_file>
+
+
+
+
+
+
+
+
+
+
+
